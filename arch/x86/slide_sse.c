@@ -11,6 +11,8 @@
 #include "../../zbuild.h"
 #include "../../deflate.h"
 
+#ifdef X86_SSE2
+
 #include <immintrin.h>
 
 Z_INTERNAL void slide_hash_sse2(deflate_state *s) {
@@ -44,3 +46,5 @@ Z_INTERNAL void slide_hash_sse2(deflate_state *s) {
         n -= 8;
     } while (n > 0);
 }
+
+#endif

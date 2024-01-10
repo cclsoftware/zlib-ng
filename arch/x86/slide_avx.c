@@ -12,6 +12,8 @@
 #include "../../zbuild.h"
 #include "../../deflate.h"
 
+#ifdef X86_AVX2
+
 #include <immintrin.h>
 
 Z_INTERNAL void slide_hash_avx2(deflate_state *s) {
@@ -45,3 +47,5 @@ Z_INTERNAL void slide_hash_avx2(deflate_state *s) {
         n -= 16;
     } while (n > 0);
 }
+
+#endif

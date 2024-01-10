@@ -6,6 +6,9 @@
  */
 
 #include "../../zbuild.h"
+
+#ifdef X86_SSE2
+
 #include <immintrin.h>
 #ifdef _MSC_VER
 #  include <nmmintrin.h>
@@ -43,4 +46,6 @@
 
 #ifdef X86_SSE42_CRC_HASH
 #  include "../../insert_string_tpl.h"
+#endif
+
 #endif

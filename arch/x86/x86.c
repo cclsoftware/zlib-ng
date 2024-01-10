@@ -10,6 +10,8 @@
 
 #include "../../zutil.h"
 
+#ifdef X86_FEATURES
+
 #ifdef _MSC_VER
 #  include <intrin.h>
 #else
@@ -78,3 +80,5 @@ void Z_INTERNAL x86_check_features(void) {
         x86_cpu_has_avx2 = 0;
     }
 }
+
+#endif
